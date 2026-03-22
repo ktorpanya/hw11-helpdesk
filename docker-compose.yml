@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   web:
-    build: .          # 🚀 สั่งให้อ่านไฟล์ Dockerfile เพื่อติดตั้ง PDO
+    build: .          # 🚀 สั่งให้อ่านไฟล์ Dockerfile
     container_name: hw11_helpdesk_web
     ports:
       - "8092:80"     # 🚀 พอร์ตหน้าเว็บของนาย A คือ 8092
