@@ -11,7 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt = $conn->prepare($sql);
         $stmt->execute(['student_name' => $student_name, 'device_name' => $device_name, 'issue_detail' => $issue_detail]);
         $success = "บันทึกข้อมูลแจ้งซ่อมสำเร็จ! ช่างกำลังเตรียมตัวลงพื้นที่ครับ";
-    } catch(PDOException $e) {
+    }
+    catch (PDOException $e) {
         $error = "เกิดข้อผิดพลาดในการบันทึก: " . $e->getMessage();
     }
 }
@@ -27,8 +28,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md">
         <h2 class="text-3xl font-extrabold text-blue-600 mb-6 text-center">🛠️ แจ้งซ่อม IT SPUC</h2>
         
-        <?php if(isset($success)) echo "<div class='bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4 text-center'>$success</div>"; ?>
-        <?php if(isset($error)) echo "<div class='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4 text-center'>$error</div>"; ?>
+        <?php if (isset($success))
+    echo "<div class='bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4 text-center'>$success</div>"; ?>
+        <?php if (isset($error))
+    echo "<div class='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4 text-center'>$error</div>"; ?>
 
         <form method="POST">
             <div class="mb-4">
@@ -48,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
     
     <div class="mt-8 text-sm text-gray-500 font-medium bg-white px-4 py-2 rounded-full shadow-sm">
-        ✨ พัฒนาส่วนหน้าบ้าน (Frontend) โดย: [รหัสของ ktorpanya] [ชื่อของ ktorpanya]
+        ✨ พัฒนาส่วนหน้าบ้าน (Frontend) โดย: 67706759 นาย นวพล ก๋งเอี่ยม
     </div>
 </body>
 </html>
